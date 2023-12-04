@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "GQQ30umQUCCXxI6xjda25ALj9nMzR9FPn8ZNNjV0JW26AsdcZXFuR2+3Ja5Y/xjX1YrMvIiDOzZ6n1ByUb09VA==",
+  "success": true,
+  "projectFilePath": "/Users/leonardosasso/Downloads/Coding_challenge/ClimateMonitor/ClimateMonitor.csproj",
+  "expectedPackageFiles": [
+    "/Users/leonardosasso/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/leonardosasso/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/leonardosasso/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "/Users/leonardosasso/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "/Users/leonardosasso/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "/Users/leonardosasso/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
