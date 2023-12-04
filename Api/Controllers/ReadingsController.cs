@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ClimateMonitor.Services;
 using ClimateMonitor.Services.Models;
+using System.Security.Permissions;
 
 namespace ClimateMonitor.Api.Controllers;
 
@@ -57,9 +58,16 @@ public class ReadingsController : ControllerBase
 
         if (!_alertService.FirmwareValidation(deviceReadingRequest.FirmwareVersion))
         {
-              return Problem(
-                detail: "The firmware value does not match semantic versioning format.",
-                statusCode: StatusCodes.Status400BadRequest);
+            // i will emulate a modelstate error called FirmwareVersion
+            ModelState.AddModelError("FirmwareVersion", "The firmware value does not match semantic versioning format.");
+            // as the unittest is waiting for a ValidationProblemDetails, we will use it
+            var details = new ValidationProblemDetails(ModelState);
+            return new ObjectResult(details)
+            {
+                ContentTypes = {"application/problem+json"},
+                StatusCode = 400,
+            };
+
         }    
 
 
