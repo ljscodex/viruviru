@@ -15,7 +15,7 @@ public class AlertService
             : default,
 
         deviceReading => 
-            deviceReading.Humidity is < -10 or > 50 
+            deviceReading.Temperature is < -10 or > 50 
             ? new Alert(AlertType.TemperatureSensorOutOfRange, "Temperature sensor is out of range.")
             : default,
     };
