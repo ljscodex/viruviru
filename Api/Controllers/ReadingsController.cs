@@ -43,10 +43,12 @@ public class ReadingsController : ControllerBase
 
     [HttpPost("evaluate")]
     public ActionResult<IEnumerable<Alert>> EvaluateReading(
-        string deviceSecret1,
         [FromBody] DeviceReadingRequest deviceReadingRequest)
     {
-        if (!_secretValidator.ValidateDeviceSecret(deviceSecret1))
+
+          string deviceSecret = Request.Headers["x-device-shared-secret"];
+
+        if (!_secretValidator.ValidateDeviceSecret(deviceSecret))
         {
             return Problem(
                 detail: "Device secret is not within the valid range.",
@@ -56,7 +58,7 @@ public class ReadingsController : ControllerBase
         if (!_alertService.FirmwareValidation(deviceReadingRequest.FirmwareVersion))
         {
               return Problem(
-                detail: "Device firmware is invalid.",
+                detail: "The firmware value does not match semantic versioning format.",
                 statusCode: StatusCodes.Status400BadRequest);
         }    
 
